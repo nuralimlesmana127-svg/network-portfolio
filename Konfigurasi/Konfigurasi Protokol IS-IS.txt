@@ -1,0 +1,227 @@
+Konfigurasi Protokol IS-IS
+
+Konfigurasi R1
+en
+conf t
+hostname R1
+
+interface loopback0
+ ip address 1.1.1.1 255.255.255.255
+ ip router isis
+ no shutdown
+
+interface e0/0
+ ip address 10.10.10.1 255.255.255.252
+ ip router isis
+ no shutdown
+
+interface e0/1
+ ip address 11.11.11.1 255.255.255.252
+ ip router isis
+ no shutdown
+
+interface e0/2
+ ip address 12.12.12.1 255.255.255.252
+ ip router isis
+ no shutdown
+
+router isis
+ net 49.0001.0000.0000.0001.00
+ is-type level-2
+ metric-style wide
+exit
+
+Konfigurasi R2
+en
+conf t
+hostname R2
+
+interface loopback0
+ ip address 2.2.2.2 255.255.255.255
+ ip router isis
+ no shutdown
+
+interface e0/0
+ ip address 10.10.10.2 255.255.255.252
+ ip router isis
+ no shutdown
+
+interface e0/1
+ ip address 13.13.13.1 255.255.255.252
+ ip router isis
+ no shutdown
+
+interface e0/2
+ ip address 14.14.14.1 255.255.255.252
+ ip router isis
+ no shutdown
+
+router isis
+ net 49.0002.0000.0000.0002.00
+ is-type level-2
+ metric-style wide
+exit
+
+Konfigurasi R3
+en
+conf t
+hostname R3
+
+interface loopback0
+ ip address 3.3.3.3 255.255.255.255
+ ip router isis
+ no shutdown
+
+interface e0/0
+ ip address 11.11.11.2 255.255.255.252
+ ip router isis
+ no shutdown
+
+interface e0/1
+ ip address 15.15.15.1 255.255.255.252
+ ip router isis
+ no shutdown
+
+interface e0/2
+ ip address 14.14.14.2 255.255.255.252
+ ip router isis
+ no shutdown
+
+router isis
+ net 49.0003.0000.0000.0003.00
+ is-type level-2
+ metric-style wide
+exit
+
+Konfigurasi R4
+en
+conf t
+hostname R4
+
+interface loopback0
+ ip address 4.4.4.4 255.255.255.255
+ ip router isis
+ no shutdown
+
+interface e0/0
+ ip address 13.13.13.2 255.255.255.252
+ ip router isis
+ no shutdown
+
+interface e0/1
+ ip address 16.16.16.1 255.255.255.252
+ ip router isis
+ no shutdown
+
+interface e0/2
+ ip address 12.12.12.2 255.255.255.252
+ ip router isis
+ no shutdown
+
+router isis
+ net 49.0004.0000.0000.0004.00
+ is-type level-2
+ metric-style wide
+exit
+
+Konfigurasi R5
+en
+conf t
+hostname R5
+
+interface loopback0
+ ip address 5.5.5.5 255.255.255.255
+ ip router isis
+ no shutdown
+
+interface e0/0
+ ip address 15.15.15.2 255.255.255.252
+ ip router isis
+ no shutdown
+
+interface e0/1
+ no shutdown
+
+interface e0/1.10
+ encapsulation dot1Q 10
+ ip address 192.168.10.1 255.255.255.0
+ ip router isis
+ no shutdown
+
+interface e0/1.11
+ encapsulation dot1Q 11
+ ip address 192.168.11.1 255.255.255.0
+ ip router isis
+ no shutdown
+
+interface e0/2
+ no shutdown
+
+interface e0/2.12
+ encapsulation dot1Q 12
+ ip address 192.168.12.1 255.255.255.0
+ ip router isis
+ no shutdown
+
+interface e0/2.13
+ encapsulation dot1Q 13
+ ip address 192.168.13.1 255.255.255.0
+ ip router isis
+ no shutdown
+
+router isis
+ net 49.0005.0000.0000.0005.00
+ is-type level-2
+ metric-style wide
+exit
+
+Konfigurasi R6
+en
+conf t
+hostname R6
+
+interface loopback0
+ ip address 6.6.6.6 255.255.255.255
+ ip router isis
+ no shutdown
+
+interface e0/0
+ ip address 16.16.16.2 255.255.255.252
+ ip router isis
+ no shutdown
+
+interface e0/1
+ no shutdown
+
+interface e0/1.14
+ encapsulation dot1Q 14
+ ip address 192.168.14.1 255.255.255.0
+ ip router isis
+ no shutdown
+
+interface e0/1.15
+ encapsulation dot1Q 15
+ ip address 192.168.15.1 255.255.255.0
+ ip router isis
+ no shutdown
+
+interface e0/2
+ no shutdown
+
+interface e0/2.16
+ encapsulation dot1Q 16
+ ip address 192.168.16.1 255.255.255.0
+ ip router isis
+ no shutdown
+
+interface e0/2.17
+ encapsulation dot1Q 17
+ ip address 192.168.17.1 255.255.255.0
+ ip router isis
+ no shutdown
+
+router isis
+ net 49.0006.0000.0000.0006.00
+ is-type level-2
+ metric-style wide
+exit
